@@ -1,20 +1,9 @@
-# googlefitbit
-Google scripts for Fitbit step data / heart rate interday / intraday download (other data may work with modification, but this script does not intend to support other endpoints at this time. You are welcome to submit PRs to add additional functionality or fix problems. There is some code for other loggables in there but that was copied over from an older version of the script.) You are free to use, duplicate, and/or modify these scripts for any (non-evil) purpose. 
-
-These scripts are provided **as-is** and are _not being actively maintained_. PRs with fixes and new additions are welcome.
-
-**Important Notes:** If you run into trouble, please double check the steps **carefully** and check the error log in the script editor before raising issues or seeking help. If you find anything in this _Readme_ confusing, please raise an issue in Github. Please be as specific as possible with any questions.
-
-If you are seeing this error "_The app you're trying to connect did not provide valid information to Fitbit. Please report this issue to them_."
-
-And "_Developer information: invalidrequest - Invalid redirecturi parameter value_"
-
-That means you did not follow the instructions correctly.
+# googlfitbit
 
 ## interday.gs
-Download step data, one row per day, from a start day to the present. Make sure not to set the start day too far in the past.
+Download step data from start day to now. Make sur not to set the start day too far in the past.
 
-Parts of this script are based on work from the following sources. The main difference in my version is that I use Fitbit's new OAuth2 and Google's OAuth2 instead of OAuthConfig which is deprecated.
+Parts of the script are based on work from the following sources. The main difference in my version is that I use Fitbit's new OAuth2 and Google's OAuth2 instead of OAuthConfig which is deprecated.
 
 - Original script by loghound@gmail.com
 - Original instructional video by Ernesto Ramirez at http://vimeo.com/26338767
@@ -22,7 +11,7 @@ Parts of this script are based on work from the following sources. The main diff
 - https://github.com/qslabs/FitbitDailyData
 
 ### Setting up:
-1. Create a **new** Google spreadsheet (do not try to re-use one with the old version of the script), click Tools > Script editor... then copy and paste the contents of the interday.gs file (see above) into the script editor and save. Return to the spreadsheet and refresh the page (Note: actually click the refresh button or select it from the menu; the keyboard shortcut is overriden on Google Sheets, at least in Google Chrome). A couple seconds after the page reloads you should see a "Fitbit" menu at the top.
+1. Create a **new** Google spreadsheet  click Tools > Script editor... then copy and paste the contents of the interday.gs file (see above) into the script editor and save. Return to the spreadsheet and refresh the page (Note: actually click the refresh button or select it from the menu; the keyboard shortcut is overriden on Google Sheets, at least in Google Chrome). A couple seconds after the page reloads you should see a "Fitbit" menu at the top.
 
 2. Add the Oauth2 Google Script library to your project by clicking Resources > Libraries... (menus inside the script editor). Then search for the OAuth2.0 library by typing in the Script ID "MswhXl8fVhTFUH_Q3UOJbXvxhMjh3Sh48" and hitting Select. More info on that library on [its Github page](https://github.com/googlesamples/apps-script-oauth2 "apps-script-oauth2"). Select the latest version and click Save. (Note: this library is in active development and newer versions may no longer work with the current version of the scripts in this repository — version 19 should work for now).
 
